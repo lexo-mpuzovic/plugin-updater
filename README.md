@@ -53,6 +53,23 @@ All methods are chainable. At th end call `run()` method.
 - ##### `setCache(bool $cache): PluginUpdater`
 
 ---
+
+## Usage example
+
+```
+(new PluginUpdater())
+    ->setBasename(BASENAME)
+    ->setSlug(PLUGIN_SLUG)
+    ->setVersion(VERSION)
+    ->setRemotePath('https://website.tld/path/info.json')
+    ->setCacheKey(CACHE_KEY)
+    ->setCacheExpiration(12 * HOUR_IN_SECONDS)
+    ->setCache(true)
+    ->run();
+```
+The file `info.json` can be called however you like but it need to be a valid JSON file.
+
+---
 ## Filters
 
 #### - `acf-image-focus/plugin_sections`
