@@ -1,0 +1,32 @@
+{
+    "name": "lexo/plugin-updater",
+    "description": "WordPress plugin updater",
+    "version": "1.0.0",
+    "type": "library",
+    "homepage": "https://www.lexo.ch/",
+    "license": "GPL-2.0-only",
+    "authors": [
+        {
+            "name": "LEXO GmbH",
+            "email": "mpuzovic@lexo.ch"
+        }
+    ],
+    "keywords": [
+        "wordpress",
+        "plugin",
+        "LEXO",
+        "updater"
+    ],
+    "autoload": {
+        "psr-4": {
+            "LEXO\\Updater\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.4.1"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.7"
+    }
+}
