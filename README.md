@@ -51,7 +51,6 @@ All methods are chainable. At th end call `run()` method.
 - ##### `setCacheKey(string $cache_key): PluginUpdater`
 - ##### `setCacheExpiration(float $cache_expiration): PluginUpdater`
 - ##### `setCache(bool $cache): PluginUpdater`
-
 ---
 
 ## Usage example
@@ -67,9 +66,35 @@ All methods are chainable. At th end call `run()` method.
     ->setCache(true)
     ->run();
 ```
-The file `info.json` can be called however you like but it need to be a valid JSON file.
+---
+## JSON file
+The file `info.json` can be called however you like but it need to be a valid JSON file. It's structure should be like this:
+
+```
+{
+    "name": "Plugin name",
+    "slug": "plugin-slug",
+    "author": "<a href='https://www.domain.tld/'>Author Name</a>",
+    "author_profile": "https://www.domain.tld/",
+    "donate_link": "https://www.domain.tld/",
+    "version": "1.2.3",
+    "download_url": "https://website.tld/path/plugin-slug-1.2.3.zip",
+    "requires": "4.7",
+    "tested": "6.0.2",
+    "requires_php": "7.4.1",
+    "sections": {
+        "description": "Lorem ipsum description",
+        "changelog": "Lorem ipsum changelog"
+    },
+    "banners": {
+        "low": "https://website.tld/path/banner-772x250.jpg",
+        "high": "https://website.tld/path/banner-1544x500.jpg"
+    }
+}
+```
 
 ---
+
 ## Filters
 
 #### - `acf-image-focus/plugin_sections`
