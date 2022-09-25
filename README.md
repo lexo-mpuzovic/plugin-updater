@@ -1,6 +1,6 @@
 # Plugin updater
 
-WordPress plugin updater
+WordPress plugin updater for self-hosted plugins.
 
 ---
 ## Versioning
