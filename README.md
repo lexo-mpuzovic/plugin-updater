@@ -97,7 +97,7 @@ The file `info.json` can be called however you like but it need to be a valid JS
 
 ## Filters
 
-#### - `acf-image-focus/plugin_sections`
+#### - `{slug}/plugin_sections`
 *Parameters*
-`apply_filters('acf-image-focus/plugin_sections', $args);`
+`apply_filters('{slug}/plugin_sections', $args);`
 - $args (array) Sections which will be used in update info popup.
