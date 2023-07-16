@@ -220,4 +220,28 @@ class PluginUpdater
             delete_transient($this->args['cache_key']);
         }
     }
+
+    public function hasNewUpdate()
+    {
+        $remote = $this->getRemoteData();
+
+        if ($remote === false) {
+            return false;
+        }
+
+        $remote = json_decode(wp_remote_retrieve_body($remote));
+
+        if (
+            $remote
+            && version_compare($this->args['version'], $remote->version, '<')
+            && version_compare($remote->requires, get_bloginfo('version'), '<')
+            && version_compare($remote->requires_php, PHP_VERSION, '<')
+        ) {
+            // There is a new update available
+            return true;
+        }
+
+        // No update available
+        return false;
+    }
 }
