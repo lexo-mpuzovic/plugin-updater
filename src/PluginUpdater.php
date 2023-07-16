@@ -96,13 +96,9 @@ class PluginUpdater
         $remote = get_transient($this->args['cache_key']);
 
         if (false === $remote || !$this->args['cache']) {
-            $remote = wp_remote_get($this->args['remote_path'], $this->args['remote_args']);
+            $remote = $this->getRemoteData();
 
-            if (
-                is_wp_error($remote)
-                || 200 !== wp_remote_retrieve_response_code($remote)
-                || empty(wp_remote_retrieve_body($remote))
-            ) {
+            if ($remote === false) {
                 return false;
             }
 
@@ -110,6 +106,21 @@ class PluginUpdater
         }
 
         $remote = json_decode(wp_remote_retrieve_body($remote));
+
+        return $remote;
+    }
+
+    public function getRemoteData()
+    {
+        $remote = wp_remote_get($this->args['remote_path'], $this->args['remote_args']);
+
+        if (
+            is_wp_error($remote)
+            || 200 !== wp_remote_retrieve_response_code($remote)
+            || empty(wp_remote_retrieve_body($remote))
+        ) {
+            return false;
+        }
 
         return $remote;
     }
