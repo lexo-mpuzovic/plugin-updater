@@ -1,7 +1,7 @@
 {
     "name": "lexo/plugin-updater",
     "description": "WordPress plugin updater",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "type": "library",
     "homepage": "https://www.lexo.ch/",
     "license": "GPL-2.0-only",
