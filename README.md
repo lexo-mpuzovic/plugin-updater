@@ -14,13 +14,15 @@ Release tags are created with Semantic versioning in mind. Commit messages were 
 ---
 ## Installation
 
-`composer require lexo/plugin-updater`
+```bash
+composer require lexo/plugin-updater`
+```
 
 ---
 
 ## Default values
 
-```
+```php
 private array $args = [
     'basename'          => '',
     'slug'              => '',
@@ -55,7 +57,7 @@ All methods are chainable. At th end call `run()` method.
 
 ## Usage example
 
-```
+```php
 (new PluginUpdater())
     ->setBasename(BASENAME)
     ->setSlug(PLUGIN_SLUG)
@@ -70,7 +72,7 @@ All methods are chainable. At th end call `run()` method.
 ## JSON file
 The file `info.json` can be called however you like but it need to be a valid JSON file. It's structure should be like this:
 
-```
+```json
 {
     "name": "Plugin name",
     "slug": "plugin-slug",
@@ -99,5 +101,7 @@ The file `info.json` can be called however you like but it need to be a valid JS
 
 #### - `{slug}/plugin_sections`
 *Parameters*
-`apply_filters('{slug}/plugin_sections', $args);`
+```php
+apply_filters('{slug}/plugin_sections', $args);
+```
 - $args (array) Sections which will be used in update info popup.
