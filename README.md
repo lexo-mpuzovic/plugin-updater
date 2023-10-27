@@ -15,7 +15,7 @@ Release tags are created with Semantic versioning in mind. Commit messages were 
 ## Installation
 
 ```bash
-composer require lexo/plugin-updater`
+composer require lexo/plugin-updater
 ```
 
 ---
